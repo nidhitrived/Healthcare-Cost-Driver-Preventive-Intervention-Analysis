@@ -1,13 +1,13 @@
 # Healthcare-Cost-Driver-Preventive-Intervention-Analysis
 
 ## Project Overview:
-Rising healthcare costs are often driven by preventable lifestyle and chronic health factors. This project applies data science and machine learning to identify the primary drivers of medical expenditure and propose data-driven preventive interventions to reduce long-term costs.
+This project analyzes the key factors influencing healthcare costs using a medical insurance dataset. Statistical tests and machine learning models were applied to evaluate the impact of lifestyle factors and chronic diseases. A composite “disease burden” feature was introduced to improve predictive performance. The final model demonstrates that cumulative health conditions significantly influence medical costs, although additional variables are needed for high-accuracy predictions.
 
 ## Objectives:
-* Identify key factors driving healthcare costs
-* Perform statistical validation of cost drivers
-* Perform statistical validation of cost drivers
-* Build predictive models for medical cost estimation
+* Analyze how smoking, diabetes, and BMI affect medical costs
+* Evaluate impact of multiple chronic diseases
+* Build predictive models for cost estimation
+* Compare models and identify best-performing approach
 
 ## Tools used:
 Python, Pandas, NumPy, Scikit-Learn, Matplotlib
@@ -16,20 +16,6 @@ Python, Pandas, NumPy, Scikit-Learn, Matplotlib
 * Records: ~100,000 patients
 * Features: 54 demographic, lifestyle, clinical, and utilization variables
 * Target Variable: total_medical_cost
-
-## Project Structure:
-
-Healthcare-Cost-Driver-Analysis/
-│
-├── data/
-│   └── medical_insurance.csv(Kaggle)
-├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_eda.ipynb
-│   ├── 03_cost_driver_analysis.ipynb
-│   └── 04_modeling.ipynb
-├── README.md
-└── requirements.txt
 
 ## Methology:
 
@@ -51,11 +37,27 @@ Healthcare-Cost-Driver-Analysis/
 4. Predictive Modeling:
    - Linear Regression (interpretability)
    - Random Forest Regressor (accuracy)
+  
+## Results
+- Best Model: Linear Regression with disease_count
+- R² Score: 0.133
+- RMSE: 2921
 
 ## Key Findings:
 * Smoking status, chronic diseases, BMI, age, and healthcare utilization are major cost drivers
-* Healthcare costs are highly right-skewed
-* Preventive interventions targeting modifiable risks offer high ROI
+* Disease burden is a strong predictor
+* Linear models outperform complex models
+
+## Limitations
+* Low R² (~0.13) → limited prediction accuracy
+* Missing variables like:
+  - Treatment history
+  - Lifestyle habits
+  - Hospital type
+* Dataset may not capture real-world complexity fully
+
+## Conclusion
+This study demonstrates that lifestyle factors and chronic diseases play a significant role in determining healthcare costs. The introduction of a composite disease burden feature improved predictive performance, highlighting the importance of cumulative health conditions. While the model provides useful insights, future work should incorporate additional variables to enhance prediction accuracy.
 
 
  
